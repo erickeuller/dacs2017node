@@ -1,23 +1,22 @@
 <div class="container">
-  <div class="row" style="background-color: #f0f0f0;">
-    <div class="col">ID</div>
-    <div class="col">Nome</div>
-    <div class="col">Opcoes</div>
-  </div>
-  
-  {{#each data}}
-  <div class="row">
-    <div class="col">
-      {{id}}
+    <div class="row" style="background-color: #f0f0f0;">
+        <div class="col">ID</div>
+        <div class="col">Nome</div>
+        <div class="col">Opcoes</div>
     </div>
-    <div class="col">
-      {{login}}
-    </div>
-    <div class="col">
-      <a href="/users/edit/{{id}}">Edit</a>
-      <a href="/users/remove/{{id}}">Remove</a>
-      
-    </div>
-  </div>
-  {{/each}}
+
+    {{#each data}}
+        <div class="row">
+            <div class="col">
+                {{id}}
+            </div>
+            <div class="col">
+                {{login}}
+            </div>
+            <div class="col">
+                <a href="/users/edit/{{id}}">Edit</a>
+                <a href="/users/remove/{{id}}">Remove</a>
+            </div>
+        </div>
+    {{/each}}
 </div>

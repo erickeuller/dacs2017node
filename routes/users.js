@@ -28,8 +28,8 @@ router.get('/new', function (req, res, next) {
 router.post('/', function (req, res, next) {
     var conn = dbutil();
     conn.query('insert into tbuser(login, email, senha) values(?,?,?)',
-        [req.body.login, req.body.email, req.body.senha], function (data) {
-            res.render('users')
+        [req.body.login, req.body.email, req.body.senha], function () {
+            res.redirect('/users');
         });
 });
 
@@ -37,8 +37,15 @@ router.post('/:id', function (req, res, next) {
     var conn = dbutil();
     conn.query('UPDATE tbuser SET login = ?, senha = ?, email = ? ' +
         'WHERE id = ?', [req.body.login, req.body.email, req.body.senha, req.params.id], function () {
-            res.render('users')
+        res.redirect('/users')
     });
+});
+
+router.get('/remove/:id', function (req, res, next) {
+    var conn = dbutil();
+    conn.query('DELETE FROM tbuser WHERE id = ?', [req.params.id], function () {
+        res.redirect('/users');
+    })
 });
 
 module.exports = router;

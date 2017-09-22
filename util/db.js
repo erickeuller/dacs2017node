@@ -4,7 +4,7 @@ function dbcomm() {
     var connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'eulleropelt',
         database: 'nodedacs2017'
     });
 
