@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h1>
+                Editar
+            </h1>
+        </div><!-- /.page-header -->
+        <form class="form" action="/users/{{id}}" method="post">
+            <div class="form-group">
+                <label>Login:</label>
+                <input class="form-control" type="text" value="{{login}}" class="form-group" name="login">
+                <label>Email:</label>
+                <input class="form-control" type="text" value="{{email}}" class="form-group" name="email">
+                <label>Senha:</label>
+                <input class="form-control" type="text" value="{{senha}}" class="form-group" name="senha">
+            </div>
+            <button class="btn btn-primary btn-block">Salvar</button>
+        </form>
+    </div><!-- /.col-sm-4 -->
+</div><!-- /.container -->
